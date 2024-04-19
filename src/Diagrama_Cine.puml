@@ -1,0 +1,39 @@
+@startuml Sistema de reservas para cine
+
+class Asiento {
+    - IdSala : String
+    - Estado : boolean = false
+    + Asiento (String idSala)
+    + liberarAsiento() : void
+    + cancelarReserva() : void
+    + mostrarEstado() : void
+}
+
+class Sala{
+    - SalaC : Arraylist<Arraylist<Asiento>>
+    + Sala(int filas, int columnas)
+    + reservarAsiento() : void
+    + liberarAsiento() : void
+    + mostrarAsientos() : void
+}
+
+class Cine{
+    - CineC : Arraylist<Arraylist<Sala>>
+    - SalaC : Arraylist<Arraylist<Asiento>>
+    + Cine(int funciones, int salas, int filas, int columnas)
+    + reservarAsiento() : void
+    + liberarAsiento() : void
+    + mostrarAsientos() : void
+}
+
+class Reserva {
+    + main(String[] args) : void
+}
+
+Cine *--- Sala
+Sala *--- Asiento
+Sala "1*" <|-- "1" Asiento : extends
+Cine "1*" <|-- "1" Sala : extends
+Reserva ..> Cine : crea >
+
+@enduml
