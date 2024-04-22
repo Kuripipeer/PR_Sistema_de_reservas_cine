@@ -1,19 +1,18 @@
 public class Asiento {
 
-    private String IdSala;
+    // private String IdSala;
     private boolean Estado = false;
 
-    public Asiento(String IdSala) {
-        this.IdSala = IdSala;
+    public Asiento() {
     }
 
-    public String getIdSala() {
-        return IdSala;
-    }
+    // public String getIdSala() {
+    //     return IdSala;
+    // }
 
-    public void setIdSala(String IdSala) {
-        this.IdSala = IdSala;
-    }
+    // public void setIdSala(String IdSala) {
+    //     this.IdSala = IdSala;
+    // }
 
     public void LiberarAsiento() {
         this.Estado = false;
@@ -24,6 +23,6 @@ public class Asiento {
     }
 
     public void MostrarEstado() {
-        System.out.println("El asiento esta " + (Estado ? "reservado" : "libre") + " en la sala " + IdSala + ".");
+        System.out.println("El asiento esta " + (Estado ? "reservado" : "libre") + ".");
     }
 }
