@@ -3,11 +3,14 @@ import java.util.ArrayList;
 public class Sala {
     private ArrayList<ArrayList<Asiento>> SalaC = new ArrayList<ArrayList<Asiento>>();
 
-    public void Sala(int filas, int columnas) {
+    private int IdAsiento = 1;
+
+    public void Sala(int salas, int filas, int columnas) {
         for (int i = 0; i < filas; i++) {
             SalaC.add(new ArrayList<Asiento>());
             for (int j = 0; j < columnas; j++) {
-                SalaC.get(i).add(new Asiento());
+                SalaC.get(i).add(new Asiento(IdAsiento, salas));
+                IdAsiento++;
             }
         }
     }
@@ -20,10 +23,10 @@ public class Sala {
         SalaC.get(fila).get(columna).ReservarAsiento();
     }
 
-    public void MostrarEstado(int fila, int columna) {
+    public void MostrarEstado(int sala) {
         for (int i = 0; i < SalaC.size(); i++) {
             for (int j = 0; j < SalaC.get(i).size(); j++) {
-                SalaC.get(i).get(j).MostrarEstado();
+                SalaC.get(i).get(j).MostrarEstado(sala);
             }
         }
     }

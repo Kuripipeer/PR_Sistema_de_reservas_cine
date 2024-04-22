@@ -1,7 +1,8 @@
 import java.util.ArrayList;
 
 public class Cine {
-    private ArrayList<ArrayList<Asiento>> SalaC = new ArrayList<ArrayList<Asiento>>();
+    // private ArrayList<ArrayList<Asiento>> SalaC = new
+    // ArrayList<ArrayList<Asiento>>();
     private ArrayList<ArrayList<Sala>> CineC = new ArrayList<ArrayList<Sala>>();
 
     public void Cine(int salas, int funciones, int filas, int columnas) {
@@ -9,7 +10,7 @@ public class Cine {
             CineC.add(new ArrayList<Sala>());
             for (int j = 0; j < funciones; j++) {
                 CineC.get(i).add(new Sala());
-                CineC.get(i).get(j).Sala(filas, columnas);
+                CineC.get(i).get(j).Sala(salas, filas, columnas);
             }
         }
     }
@@ -22,7 +23,7 @@ public class Cine {
         CineC.get(sala).get(funcion).ReservarAsiento(fila, columna);
     }
 
-    public void MostrarEstado(int sala, int funcion, int fila, int columna) {
-        CineC.get(sala).get(funcion).MostrarEstado(fila, columna);
-    }   
+    public void MostrarEstado(int sala, int funcion) {
+        CineC.get(sala).get(funcion).MostrarEstado(sala);
+    }
 }
