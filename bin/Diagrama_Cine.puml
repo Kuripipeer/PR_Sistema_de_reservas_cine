@@ -1,29 +1,31 @@
 @startuml Sistema de reservas para cine
 
 class Asiento {
-    - IdSala : String
+    - IdSala : int
+    - IdAsiento : int
     - Estado : boolean = false
-    + Asiento (String idSala)
-    + liberarAsiento() : void
-    + cancelarReserva() : void
-    + mostrarEstado() : void
+    + Asiento (int IdAsiento, int IdSala)
+    + LiberarAsiento() : void
+    + ReservarAsiento() : void
+    + MostrarEstado(int sala) : void
 }
 
 class Sala{
     - SalaC : Arraylist<Arraylist<Asiento>>
-    + Sala(int filas, int columnas)
-    + reservarAsiento() : void
-    + liberarAsiento() : void
-    + mostrarAsientos() : void
+    - IdAsiento : int = 1;
+    + Sala(int salas, int filas, int columnas)
+    + LiberarAsiento(int fila, int columna) : void
+    + ReservarAsiento(int fila, int columna) : void
+    + mostrarEstado(int sala) : void
 }
 
 class Cine{
     - CineC : Arraylist<Arraylist<Sala>>
     - SalaC : Arraylist<Arraylist<Asiento>>
     + Cine(int funciones, int salas, int filas, int columnas)
-    + reservarAsiento() : void
-    + liberarAsiento() : void
-    + mostrarAsientos() : void
+    + LiberarAsiento(int sala, int funcion, int fila, int columna) : void
+    + ReservarAsiento(int sala, int funcion, int fila, int columna) : void
+    + mostrarEstado(int sala, int funcion) : void
 }
 
 class Reserva {
