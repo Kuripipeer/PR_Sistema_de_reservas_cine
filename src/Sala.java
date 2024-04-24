@@ -27,7 +27,6 @@ public class Sala {
         for (int i = 0; i < SalaC.size(); i++) {
             for (int j = 0; j < SalaC.get(i).size(); j++) {
                 System.out.print(SalaC.get(i).get(j).MostrarEstado(sala, funcion) + " ");
-                // SalaC.get(i).get(j).MostrarEstado(sala, funcion);
             }
             System.out.println();
         }
