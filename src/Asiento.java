@@ -1,28 +1,8 @@
 public class Asiento {
 
-    private int IdAsiento;
-    private int IdSala;
     private boolean Estado = false;
 
-    public Asiento(int IdAsiento, int IdSala) {
-        this.IdAsiento = IdAsiento;
-        this.IdSala = IdSala;
-    }
-
-    public int getIdAsiento() {
-        return IdAsiento;
-    }
-
-    public void setIdAsiento(int IdAsiento) {
-        this.IdAsiento = IdAsiento;
-    }
-
-    public int getIdSala() {
-        return IdSala;
-    }
-
-    public void setIdSala(int IdSala) {
-        this.IdSala = IdSala;
+    public Asiento() {
     }
 
     public void LiberarAsiento() {
@@ -42,7 +22,7 @@ public class Asiento {
         }
     }
 
-    public String MostrarEstado(int sala, int funcion) {
+    public String MostrarEstado() {
         return (Estado == true) ? "X" : "O";
     }
 }

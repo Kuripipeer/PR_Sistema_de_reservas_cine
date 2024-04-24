@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class Reserva {
-    static Scanner Scanner = new Scanner(System.in);
+    private static Scanner Scanner = new Scanner(System.in);
 
     public static void limpiarConsola() {
         System.out.print("\033[2J");
