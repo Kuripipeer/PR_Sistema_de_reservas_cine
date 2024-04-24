@@ -42,8 +42,8 @@ public class Asiento {
         }
     }
 
-    public void MostrarEstado(int sala) {
+    public void MostrarEstado(int sala, int funcion) {
         System.out.println("El asiento " + getIdAsiento() + " esta " + (Estado ? "reservado" : "libre") + " de la sala "
-                + (sala+1) + ".");
+                + (sala+1) + " función " + (funcion+1) + ".");
     }
 }

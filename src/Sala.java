@@ -5,7 +5,7 @@ public class Sala {
 
     private int IdAsiento = 1;
 
-    public void Sala(int salas, int filas, int columnas) {
+    public Sala(int salas, int filas, int columnas) {
         for (int i = 0; i < filas; i++) {
             SalaC.add(new ArrayList<Asiento>());
             for (int j = 0; j < columnas; j++) {
@@ -23,10 +23,10 @@ public class Sala {
         SalaC.get(fila).get(columna).ReservarAsiento();
     }
 
-    public void MostrarEstado(int sala) {
+    public void MostrarEstado(int sala, int funcion) {
         for (int i = 0; i < SalaC.size(); i++) {
             for (int j = 0; j < SalaC.get(i).size(); j++) {
-                SalaC.get(i).get(j).MostrarEstado(sala);
+                SalaC.get(i).get(j).MostrarEstado(sala, funcion);
             }
         }
     }

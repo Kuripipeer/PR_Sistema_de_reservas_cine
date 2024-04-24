@@ -34,8 +34,6 @@ class Reserva {
 
 Cine *--- Sala
 Sala *--- Asiento
-Sala "1*" <|-- "1" Asiento : extends
-Cine "1*" <|-- "1" Sala : extends
 Reserva ..> Cine : crea >
 
 @enduml

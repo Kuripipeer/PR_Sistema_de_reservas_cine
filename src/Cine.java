@@ -9,8 +9,8 @@ public class Cine {
         for (int i = 0; i < salas; i++) {
             CineC.add(new ArrayList<Sala>());
             for (int j = 0; j < funciones; j++) {
-                CineC.get(i).add(new Sala());
-                CineC.get(i).get(j).Sala(salas, filas, columnas);
+                CineC.get(i).add(new Sala(salas, filas, columnas));
+                
             }
         }
     }
@@ -24,6 +24,6 @@ public class Cine {
     }
 
     public void MostrarEstado(int sala, int funcion) {
-        CineC.get(sala).get(funcion).MostrarEstado(sala);
+        CineC.get(sala).get(funcion).MostrarEstado(sala, funcion);
     }
 }

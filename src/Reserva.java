@@ -10,7 +10,7 @@ public class Reserva {
 
     public static void main(String[] args) throws Exception {
 
-        Cine cine = new Cine(2,3,2,2);
+        Cine cine = new Cine(4,3,2,2);
 
         limpiarConsola();
 
