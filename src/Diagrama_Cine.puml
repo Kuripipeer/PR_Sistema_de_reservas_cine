@@ -1,35 +1,34 @@
 @startuml Sistema de reservas para cine
 
 class Asiento {
-    - IdSala : int
-    - IdAsiento : int
-    - Estado : boolean = false
-    + Asiento (int IdAsiento, int IdSala)
+
+    - Estado : boolean
+    + Asiento ()
     + LiberarAsiento() : void
     + ReservarAsiento() : void
-    + MostrarEstado(int sala) : void
+    + MostrarEstado() : String
 }
 
 class Sala{
     - SalaC : Arraylist<Arraylist<Asiento>>
-    - IdAsiento : int = 1;
-    + Sala(int salas, int filas, int columnas)
-    + LiberarAsiento(int fila, int columna) : void
-    + ReservarAsiento(int fila, int columna) : void
-    + mostrarEstado(int sala) : void
+    + Sala(filas : int, columnas : int)
+    + LiberarAsiento(fila : int, columna : int) : void
+    + ReservarAsiento(fila : int, columna : int) : void
+    + MostrarEstado() : void
 }
 
 class Cine{
     - CineC : Arraylist<Arraylist<Sala>>
-    - SalaC : Arraylist<Arraylist<Asiento>>
-    + Cine(int funciones, int salas, int filas, int columnas)
-    + LiberarAsiento(int sala, int funcion, int fila, int columna) : void
-    + ReservarAsiento(int sala, int funcion, int fila, int columna) : void
-    + mostrarEstado(int sala, int funcion) : void
+    + Cine(funciones : int, salas : int, filas : int, columnas : int)
+    + LiberarAsiento(sala : int, funcion : int, fila : int, columna : int) : void
+    + ReservarAsiento(sala : int, funcion : int, fila : int, columna : int) : void
+    + MostrarEstado(sala : int, funcion : int) : void
 }
 
 class Reserva {
+    - Scanner : new Scanner(System.in)
     + main(String[] args) : void
+    + LimpiarConsola() : void
 }
 
 Cine *--- Sala
