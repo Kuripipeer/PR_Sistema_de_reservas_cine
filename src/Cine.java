@@ -9,7 +9,6 @@ public class Cine {
             CineC.add(new ArrayList<Sala>());
             for (int j = 0; j < funciones; j++) {
                 CineC.get(i).add(new Sala(filas, columnas));
-                
             }
         }
     }
