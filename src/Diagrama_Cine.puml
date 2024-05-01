@@ -26,13 +26,21 @@ class Cine{
 }
 
 class Reserva {
-    - Scanner : new Scanner(System.in)
+    - Scanner : Scanner
     + main(String[] args) : void
     + LimpiarConsola() : void
+}
+
+class Cancelaciones{
+    - CancelacionesC = Stack <Cine>
+    + Cancelaciones(funciones : int, salas : int, filas : int, columnas : int)
+    + DeshacerCancelacion() : void
+    + MostrarCancelaciones() : void
 }
 
 Cine *--- Sala
 Sala *--- Asiento
 Reserva ..> Cine : crea >
+Cancelaciones --|> Cine : extiende >
 
 @enduml
