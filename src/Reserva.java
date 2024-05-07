@@ -20,14 +20,18 @@ public class Reserva {
         System.out.println("\nReservar asiento 1, funcion 1, sala 1\n");
         cine.ReservarAsiento(0, 0, 0, 0);
         cine.MostrarEstado(0, 0);
+        System.out.println("\nMostrar cancelaciones\n");
+        cine.MostrarCancelaciones();
 
         System.out.println("\nPresiona enter para continuar...");
         Scanner.nextLine();
         limpiarConsola();
 
         System.out.println("Mostrar estado de la sala 1, funcion 1\n");
+        System.out.println("\nMostrar cancelaciones\n");
+        cine.MostrarCancelaciones();
         cine.MostrarEstado(0, 0);
-        System.out.println("\nReservar asiento ya reservado(asiento 1, sala 1, funcion 1)\n");
+        System.out.println("\nReservar asiento(asiento 1, sala 1, funcion 1)\n");
         cine.ReservarAsiento(0, 0, 0, 0);
 
         System.out.println("\nPresiona enter para continuar...");
@@ -35,10 +39,14 @@ public class Reserva {
         limpiarConsola();
 
         System.out.println("Mostrar estado de la sala 1, funcion 1\n");
+        System.out.println("\nMostrar cancelaciones\n");
+        cine.MostrarCancelaciones();
         cine.MostrarEstado(0, 0);
         System.out.println("\nCancelar reserva del asiento 1, funcion 1, sala 1\n");
         cine.LiberarAsiento(0, 0, 0, 0);
         cine.MostrarEstado(0, 0);
+        System.out.println("\nMostrar cancelaciones\n");
+        cine.MostrarCancelaciones();
 
         System.out.println("\nPresiona enter para continuar...");
         Scanner.nextLine();
@@ -53,6 +61,24 @@ public class Reserva {
         System.out.println("\nPresiona enter para continuar...");
         Scanner.nextLine();
         limpiarConsola();
+
+        System.out.println("\nReservar asiento(asiento 1, sala 1, funcion 1)\n");
+        cine.ReservarAsiento(0, 0, 0, 0);
+        cine.MostrarEstado(0, 0);
+        System.out.println("\nMostrar cancelaciones\n");
+        cine.MostrarCancelaciones();
+        System.out.println("\nCancelar reserva del asiento 1, funcion 1, sala 1\n");
+        cine.LiberarAsiento(0, 0, 0, 0);
+        cine.MostrarEstado(0, 0);
+        System.out.println("\nMostrar cancelaciones\n");
+        cine.MostrarCancelaciones();
+        System.out.println("\nDeshacer cancelación\n");
+        cine.DeshacerCancelacion();
+        cine.MostrarEstado(0, 0);
+        System.out.println("\nMostrar cancelaciones\n");
+        cine.MostrarCancelaciones();
+
+
 
     }
 }

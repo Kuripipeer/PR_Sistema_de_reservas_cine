@@ -1,8 +1,9 @@
 import java.util.ArrayList;
 
 public class Cine {
-    
+
     private ArrayList<ArrayList<Sala>> CineC = new ArrayList<ArrayList<Sala>>();
+    Cancelaciones Cancelaciones = new Cancelaciones();
 
     public Cine(int salas, int funciones, int filas, int columnas) {
         for (int i = 0; i < salas; i++) {
@@ -15,6 +16,15 @@ public class Cine {
 
     public void LiberarAsiento(int sala, int funcion, int fila, int columna) {
         CineC.get(sala).get(funcion).LiberarAsiento(fila, columna);
+        Cancelaciones.AgregarCancelacion(sala, funcion, fila, columna);
+    }
+
+    public void MostrarCancelaciones() {
+        Cancelaciones.MostrarCancelaciones();
+    }
+
+    public void DeshacerCancelacion() {
+        Cancelaciones.DeshacerCancelacion(CineC);
     }
 
     public void ReservarAsiento(int sala, int funcion, int fila, int columna) {

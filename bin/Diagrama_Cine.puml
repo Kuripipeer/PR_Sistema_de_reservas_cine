@@ -32,8 +32,9 @@ class Reserva {
 }
 
 class Cancelaciones{
-    - CancelacionesC = Stack <Cine>
-    + Cancelaciones(funciones : int, salas : int, filas : int, columnas : int)
+    - CancelacionesC = Stack <String>
+    + Cancelaciones()
+    + AgregarCancelaciones(funciones : int, salas : int, filas : int, columnas : int) : void
     + DeshacerCancelacion() : void
     + MostrarCancelaciones() : void
 }
