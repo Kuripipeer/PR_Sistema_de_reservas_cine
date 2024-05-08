@@ -11,12 +11,14 @@ public class Cancelaciones {
     }
 
     public void AgregarCancelacion(int salas, int funciones, int filas, int columnas) {
-        if (cancelaciones.peek() == cancelaciones.lastElement()) {
-            System.out.println("No se puede cancelar la última reserva.");
-        } else {
-            String cancelacion = salas + "," + funciones + "," + filas + "," + columnas;
+        String cancelacion = salas + "," + funciones + "," + filas + "," + columnas;
             cancelaciones.push(cancelacion);
-        }
+        
+        // if (cancelaciones.peek() == cancelaciones.lastElement()) {
+        //     System.out.println("No se puede cancelar la última reserva.");
+        // } else {
+            
+        // }
     }
 
     public void MostrarCancelaciones() {
@@ -35,13 +37,14 @@ public class Cancelaciones {
     public void DeshacerCancelacion(ArrayList<ArrayList<Sala>> Cine) {
         if (cancelaciones.isEmpty()) {
             System.out.println("No hay cancelaciones");
-            return;
-        }
-        String cancelacion = cancelaciones.peek();
-        String[] datos = cancelacion.split(",");
+        } else {
+            String cancelacion = cancelaciones.peek();
+            String[] datos = cancelacion.split(",");
 
-        Cine.get(Integer.parseInt(datos[0])).get(Integer.parseInt(datos[1])).ReservarAsiento(Integer.parseInt(datos[2]),
-                Integer.parseInt(datos[3]));
-        cancelaciones.pop();
+            Cine.get(Integer.parseInt(datos[0])).get(Integer.parseInt(datos[1])).ReservarAsiento(
+                    Integer.parseInt(datos[2]),
+                    Integer.parseInt(datos[3]));
+            cancelaciones.pop();
+        }
     }
 }
