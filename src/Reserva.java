@@ -28,6 +28,6 @@ public class Reserva {
         cine.MostrarEstado(0, 0);
         System.out.println("Cancelaciones:");
         cine.MostrarCancelaciones();
-
+        Scanner.close();
     }
 }
