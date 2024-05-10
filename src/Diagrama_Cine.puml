@@ -39,6 +39,14 @@ class Cancelaciones{
     + MostrarCancelaciones() : void
 }
 
+class Espera{
+    - EsperaC = Queue <String>
+    + Espera()
+    + AgregarEspera(funciones : int, salas : int, filas : int, columnas : int) : void
+    + DeshacerEspera() : void
+    + MostrarEspera() : void
+}
+
 Cine *--- Sala
 Sala *--- Asiento
 Reserva ..> Cine : crea >

@@ -10,7 +10,7 @@ public class Reserva {
 
     public static void main(String[] args) throws Exception {
 
-        Cine cine = new Cine(4,3,2,2);
+        Cine cine = new Cine(4, 3, 2, 2);
 
         limpiarConsola();
 
@@ -21,7 +21,13 @@ public class Reserva {
         cine.ReservarAsiento(0, 0, 0, 0);
         System.out.println("El estado de los asientos de la sala 0, funcion 0 es:");
         cine.MostrarEstado(0, 0);
+        System.out.println("Hacer cancelación sala 0, función 0, fila 0, columna 0:");
+        cine.LiberarAsiento(0, 0, 0, 0);
+
+        System.out.println("El estado de los asientos de la sala 0, funcion 0 es:");
+        cine.MostrarEstado(0, 0);
         System.out.println("Cancelaciones:");
-    
+        cine.MostrarCancelaciones();
+
     }
 }

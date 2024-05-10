@@ -13,12 +13,9 @@ public class Cancelaciones {
     public void AgregarCancelacion(int salas, int funciones, int filas, int columnas) {
         String cancelacion = salas + "," + funciones + "," + filas + "," + columnas;
             cancelaciones.push(cancelacion);
+
         
-        // if (cancelaciones.peek() == cancelaciones.lastElement()) {
-        //     System.out.println("No se puede cancelar la última reserva.");
-        // } else {
-            
-        // }
+        
     }
 
     public void MostrarCancelaciones() {
@@ -26,7 +23,6 @@ public class Cancelaciones {
             System.out.println("No hay cancelaciones");
             return;
         }
-        System.out.println("Cancelaciones:");
         for (String cancelacion : cancelaciones) {
             String[] datos = cancelacion.split(",");
             System.out.println(

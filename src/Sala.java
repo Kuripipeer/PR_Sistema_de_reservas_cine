@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 public class Sala {
-    
+
     private ArrayList<ArrayList<Asiento>> SalaC = new ArrayList<ArrayList<Asiento>>();
 
     public Sala(int filas, int columnas) {
@@ -13,12 +13,18 @@ public class Sala {
         }
     }
 
-    public void LiberarAsiento(int fila, int columna) {
-        SalaC.get(fila).get(columna).LiberarAsiento();
+    public boolean LiberarAsiento(int fila, int columna) {
+        if (SalaC.get(fila).get(columna).LiberarAsiento()) {
+            return true;
+        }
+        return false;
     }
 
-    public void ReservarAsiento(int fila, int columna) {
-        SalaC.get(fila).get(columna).ReservarAsiento();
+    public boolean ReservarAsiento(int fila, int columna) {
+        if(SalaC.get(fila).get(columna).ReservarAsiento()){
+            return true;
+        }
+        return false;
     }
 
     public void MostrarEstado() {

@@ -15,8 +15,9 @@ public class Cine {
     }
 
     public void LiberarAsiento(int sala, int funcion, int fila, int columna) {
-        CineC.get(sala).get(funcion).LiberarAsiento(fila, columna);
-        Cancelaciones.AgregarCancelacion(sala, funcion, fila, columna);
+        if (CineC.get(sala).get(funcion).LiberarAsiento(fila, columna)) {
+            Cancelaciones.AgregarCancelacion(sala, funcion, fila, columna);
+        }
     }
 
     public void MostrarCancelaciones() {
