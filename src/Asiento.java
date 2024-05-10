@@ -16,9 +16,10 @@ public class Asiento {
     public void ReservarAsiento() {
         if (Estado == false) {
             this.Estado = true;
+            
         } else if (Estado == true) {
             System.out.println("El asiento ya esta reservado.");
-
+            
         }
     }
 
