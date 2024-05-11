@@ -1,7 +1,4 @@
-import java.util.Scanner;
-
 public class Reserva {
-    private static Scanner Scanner = new Scanner(System.in);
 
     public static void limpiarConsola() {
         System.out.print("\033[2J");
@@ -14,22 +11,44 @@ public class Reserva {
 
         limpiarConsola();
 
-        System.out.println("Cancelaciones:");
+        System.out.println("\t\tBienvenido al cine");
+        System.out.println("\nEstado de asientos para la sala 1, funcion 1\n");
+        cine.MostrarEstado(1, 1);
+        System.out.println("\nReservas canceladas");
         cine.MostrarCancelaciones();
-        System.out.println("Lista de espera: ");
+        System.out.println("\nReservas en espera");
         cine.MostrarEsperas();
-        System.out.println("El estado de los asientos de la sala 0, funcion 0 es:");
-        cine.MostrarEstado(0, 0);
-        cine.ReservarAsiento(0, 0, 0, 0);
-        System.out.println("El estado de los asientos de la sala 0, funcion 0 es:");
-        cine.MostrarEstado(0, 0);
-        System.out.println("Hacer cancelación sala 0, función 0, fila 0, columna 0:");
-        cine.LiberarAsiento(0, 0, 0, 0);
 
-        System.out.println("El estado de los asientos de la sala 0, funcion 0 es:");
-        cine.MostrarEstado(0, 0);
-        System.out.println("Cancelaciones:");
+        System.out.println("\nReservando asiento 1,1 en la sala 1, funcion 1");
+        cine.ReservarAsiento(1, 1, 1, 1);
+
+        System.out.println("\nEstado de asientos para la sala 1, funcion 1\n");
+        cine.MostrarEstado(1, 1);
+        System.out.println("\nReservas canceladas");
         cine.MostrarCancelaciones();
-        Scanner.close();
+        System.out.println("\nReservas en espera");
+        cine.MostrarEsperas();
+
+        System.out.println("\nReservación de un asiento que ya está reservado y su registro en la cola de espera.");
+        cine.ReservarAsiento(1, 1, 1, 1);
+
+        System.out.println("\nEstado de asientos para la sala 1, funcion 1\n");
+        cine.MostrarEstado(1, 1);
+        System.out.println("\nReservas canceladas");
+        cine.MostrarCancelaciones();
+        System.out.println("\nReservas en espera");
+        cine.MostrarEsperas();
+
+        System.out.println(
+                "\nCancelar la reservación del asiento 1,1 en la sala 1, funcion 1 y su registro en la pila de cancelaciones.");
+        cine.LiberarAsiento(1, 1, 1, 1);
+
+        System.out.println("\nEstado de asientos para la sala 1, funcion 1\n");
+        cine.MostrarEstado(1, 1);
+        System.out.println("\nReservas canceladas");
+        cine.MostrarCancelaciones();
+        System.out.println("\nReservas en espera");
+        cine.MostrarEsperas();
+
     }
 }

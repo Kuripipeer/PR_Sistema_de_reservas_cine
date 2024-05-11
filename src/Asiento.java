@@ -28,6 +28,6 @@ public class Asiento {
     }
 
     public String MostrarEstado() {
-        return (Estado == true) ? "X" : "O";
+        return (Estado == true) ? "[R]" : "[D]";
     }
 }
