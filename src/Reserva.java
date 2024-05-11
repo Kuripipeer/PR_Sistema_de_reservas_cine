@@ -16,6 +16,8 @@ public class Reserva {
 
         System.out.println("Cancelaciones:");
         cine.MostrarCancelaciones();
+        System.out.println("Lista de espera: ");
+        cine.MostrarEsperas();
         System.out.println("El estado de los asientos de la sala 0, funcion 0 es:");
         cine.MostrarEstado(0, 0);
         cine.ReservarAsiento(0, 0, 0, 0);

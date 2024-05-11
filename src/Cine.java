@@ -4,6 +4,7 @@ public class Cine {
 
     private ArrayList<ArrayList<Sala>> CineC = new ArrayList<ArrayList<Sala>>();
     Cancelaciones Cancelaciones = new Cancelaciones();
+    Espera Espera = new Espera();
 
     public Cine(int salas, int funciones, int filas, int columnas) {
         for (int i = 0; i < salas; i++) {
@@ -22,6 +23,10 @@ public class Cine {
 
     public void MostrarCancelaciones() {
         Cancelaciones.MostrarCancelaciones();
+    }
+
+    public void MostrarEsperas() {
+        Espera.MostrarEsperas();
     }
 
     public void DeshacerCancelacion() {

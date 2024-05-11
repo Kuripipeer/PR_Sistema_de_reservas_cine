@@ -11,4 +11,16 @@ public class Espera {
         String esperas = salas + "," + funciones + "," + filas + "," + columnas;
         espera.offer(esperas);
     }
+
+    public void MostrarEsperas(){
+        if (espera.isEmpty()) {
+            System.out.println("No hay esperas");
+            return;
+        }
+        for (String esperas : espera) {
+            String[] datos = esperas.split(",");
+            System.out.println(
+                    "Sala: " + datos[0] + ", Funcion: " + datos[1] + ", Fila: " + datos[2] + ", Columna: " + datos[3]);
+        }
+    }
 }
