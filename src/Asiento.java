@@ -2,8 +2,7 @@ public class Asiento {
 
     private boolean Estado = false;
 
-    public Asiento() {
-    }
+    public Asiento() {}
 
     public boolean LiberarAsiento() {
         if (Estado == true) {

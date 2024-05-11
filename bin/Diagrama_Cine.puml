@@ -4,16 +4,16 @@ class Asiento {
 
     - Estado : boolean
     + Asiento ()
-    + LiberarAsiento() : void
-    + ReservarAsiento() : void
+    + LiberarAsiento() : boolean
+    + ReservarAsiento() : boolean
     + MostrarEstado() : String
 }
 
 class Sala{
     - SalaC : Arraylist<Arraylist<Asiento>>
     + Sala(filas : int, columnas : int)
-    + LiberarAsiento(fila : int, columna : int) : void
-    + ReservarAsiento(fila : int, columna : int) : void
+    + LiberarAsiento(fila : int, columna : int) : boolean
+    + ReservarAsiento(fila : int, columna : int) : boolean
     + MostrarEstado() : void
 }
 
@@ -23,10 +23,12 @@ class Cine{
     + LiberarAsiento(sala : int, funcion : int, fila : int, columna : int) : void
     + ReservarAsiento(sala : int, funcion : int, fila : int, columna : int) : void
     + MostrarEstado(sala : int, funcion : int) : void
+    + MostrarCancelaciones() : void
+    + MostrarEsperas() : void
+    + DeshacerCancelacion() : void
 }
 
 class Reserva {
-    - Scanner : Scanner
     + main(String[] args) : void
     + LimpiarConsola() : void
 }
@@ -35,21 +37,23 @@ class Cancelaciones{
     - CancelacionesC = Stack <String>
     + Cancelaciones()
     + AgregarCancelaciones(funciones : int, salas : int, filas : int, columnas : int) : void
-    + DeshacerCancelacion() : void
     + MostrarCancelaciones() : void
+    + DeshacerCancelacion(Cine: ArrayList<ArrayList<Sala>>) : String
 }
 
 class Espera{
     - EsperaC = Queue <String>
     + Espera()
     + AgregarEspera(funciones : int, salas : int, filas : int, columnas : int) : void
-    + DeshacerEspera() : void
     + MostrarEspera() : void
+    + DeshacerEspera() : String
+    + EliminarEspera() : void
 }
 
 Cine *--- Sala
 Sala *--- Asiento
 Reserva ..> Cine : crea >
-Cancelaciones --|> Cine : extiende >
+Cancelaciones --|> Cine 
+Espera --|> Cine 
 
 @enduml

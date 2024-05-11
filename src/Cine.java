@@ -3,8 +3,8 @@ import java.util.ArrayList;
 public class Cine {
 
     private ArrayList<ArrayList<Sala>> CineC = new ArrayList<ArrayList<Sala>>();
-    Cancelaciones Cancelaciones = new Cancelaciones();
-    Espera Espera = new Espera();
+    private Cancelaciones Cancelaciones = new Cancelaciones();
+    private Espera Espera = new Espera();
 
     public Cine(int salas, int funciones, int filas, int columnas) {
         for (int i = 0; i < salas; i++) {
@@ -29,6 +29,20 @@ public class Cine {
         }
     }
 
+    public void ReservarAsiento(int sala, int funcion, int fila, int columna) {
+        if (!CineC.get(sala).get(funcion).ReservarAsiento(fila, columna)) {
+            Espera.AgregarEspera(sala, funcion, fila, columna);
+            System.out.println("Asiento no disponible, se ha agregado a la lista de espera...");
+        } else {
+            System.out.println("Asiento reservado exitosamente.\nPara la sala " + sala + ", funcion " + funcion
+                    + ", asiento " + fila + "," + columna + ".");
+        }
+    }
+
+    public void MostrarEstado(int sala, int funcion) {
+        CineC.get(sala).get(funcion).MostrarEstado();
+    }
+
     public void MostrarCancelaciones() {
         Cancelaciones.MostrarCancelaciones();
     }
@@ -44,19 +58,5 @@ public class Cine {
             Espera.AgregarEspera(Integer.parseInt(respuesta.split(",")[0]), Integer.parseInt(respuesta.split(",")[1]),
                     Integer.parseInt(respuesta.split(",")[2]), Integer.parseInt(respuesta.split(",")[3]));
         }
-    }
-
-    public void ReservarAsiento(int sala, int funcion, int fila, int columna) {
-        if (!CineC.get(sala).get(funcion).ReservarAsiento(fila, columna)) {
-            Espera.AgregarEspera(sala, funcion, fila, columna);
-            System.out.println("Asiento no disponible, se ha agregado a la lista de espera...");
-        } else {
-            System.out.println("Asiento reservado exitosamente.\nPara la sala " + sala + ", funcion " + funcion
-                    + ", asiento " + fila + "," + columna + ".");
-        }
-    }
-
-    public void MostrarEstado(int sala, int funcion) {
-        CineC.get(sala).get(funcion).MostrarEstado();
     }
 }

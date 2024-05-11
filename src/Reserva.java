@@ -1,6 +1,6 @@
 public class Reserva {
 
-    public static void limpiarConsola() {
+    public static void LimpiarConsola() {
         System.out.print("\033[2J");
         System.out.print("\033[H");
     }
@@ -9,7 +9,7 @@ public class Reserva {
 
         Cine cine = new Cine(4, 3, 2, 2);
 
-        limpiarConsola();
+        LimpiarConsola();
 
         System.out.println("\t\tBienvenido al cine");
         System.out.println("\nEstado de asientos para la sala 1, funcion 1\n");

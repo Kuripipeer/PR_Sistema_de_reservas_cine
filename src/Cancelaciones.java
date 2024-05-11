@@ -4,12 +4,8 @@ import java.util.Stack;
 public class Cancelaciones {
 
     private Stack<String> cancelaciones = new Stack<String>();
-    Espera Espera = new Espera();
 
-    public Cancelaciones() {
-        // super(0, 0, 0, 0); // Explicitly invoke the constructor of the superclass
-        // Cine.
-    }
+    public Cancelaciones() {}
 
     public void AgregarCancelacion(int salas, int funciones, int filas, int columnas) {
         String cancelacion = salas + "," + funciones + "," + filas + "," + columnas;
@@ -50,8 +46,6 @@ public class Cancelaciones {
                         + ", Funcion: " + datos[1] + ", Fila: " + datos[2] + ", Columna: " + datos[3]);
                         cancelaciones.pop();
                         return respuesta = cancelacion;
-                // Espera.AgregarEspera(Integer.parseInt(datos[0]), Integer.parseInt(datos[1]), Integer.parseInt(datos[2]),
-                //         Integer.parseInt(datos[3]));
             }
         }
     }

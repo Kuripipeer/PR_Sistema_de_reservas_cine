@@ -4,8 +4,7 @@ import java.util.Queue;
 public class Espera {
     private Queue<String> espera = new LinkedList<>();
 
-    public Espera() {
-    }
+    public Espera() {}
 
     public void AgregarEspera(int salas, int funciones, int filas, int columnas) {
         String esperas = salas + "," + funciones + "," + filas + "," + columnas;
@@ -32,7 +31,6 @@ public class Espera {
             return respuesta;
         } else {
             String esperas = espera.peek();
-            // String[] datos = esperas.split(",");
             return respuesta = esperas;
         }
     }
@@ -43,7 +41,6 @@ public class Espera {
             return;
         } else {
             espera.poll();
-            // System.out.println("Se ha eliminado de la lista de espera");
         }
     }
 }
