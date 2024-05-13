@@ -11,8 +11,6 @@ class Asiento {
 
 class Sala{
     - salaC : Arraylist<Arraylist<Asiento>>
-    - cancelaciones : Cancelaciones
-    - espera : Espera
     + Sala(filas : int, columnas : int)
     + LiberarAsiento(fila : int, columna : int) : boolean
     + ReservarAsiento(fila : int, columna : int) : boolean
@@ -21,6 +19,8 @@ class Sala{
 
 class Cine{
     - cineC : Arraylist<Arraylist<Sala>>
+    - cancelaciones : Cancelaciones
+    - espera : Espera
     + Cine(funciones : int, salas : int, filas : int, columnas : int)
     + LiberarAsiento(sala : int, funcion : int, fila : int, columna : int) : void
     + ReservarAsiento(sala : int, funcion : int, fila : int, columna : int) : void
