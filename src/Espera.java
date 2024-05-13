@@ -9,7 +9,6 @@ public class Espera {
     public void AgregarEspera(int salas, int funciones, int filas, int columnas) {
         String esperas = salas + "," + funciones + "," + filas + "," + columnas;
         espera.offer(esperas);
-        System.out.println("Se ha agregado a la lista de espera");
     }
 
     public void MostrarEsperas(){

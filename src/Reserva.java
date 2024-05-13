@@ -50,5 +50,36 @@ public class Reserva {
         System.out.println("\nReservas en espera");
         cine.MostrarEsperas();
 
+
+        System.out.println("\nDeshacer la cancelación del asiento 1,1 en la sala 1, funcion 1 y su registro en la cola de espera.");
+        cine.DeshacerCancelacion();
+
+        System.out.println("\nEstado de asientos para la sala 1, funcion 1\n");
+        cine.MostrarEstado(1, 1);
+        System.out.println("\nReservas canceladas");
+        cine.MostrarCancelaciones();
+        System.out.println("\nReservas en espera");
+        cine.MostrarEsperas();
+
+        System.out.println("\nVolver a cancelar la reservación del asiento 1,1 en la sala 1, funcion 1 y su registro en la pila de cancelaciones.");
+        cine.LiberarAsiento(1, 1, 1, 1);
+
+        System.out.println("\nEstado de asientos para la sala 1, funcion 1\n");
+        cine.MostrarEstado(1, 1);
+        System.out.println("\nReservas canceladas");
+        cine.MostrarCancelaciones();
+        System.out.println("\nReservas en espera");
+        cine.MostrarEsperas();
+
+        System.out.println("\nVolver a deshacer la cancelación del asiento 1,1 en la sala 1, funcion 1 y su registro en la cola de espera.");
+        cine.DeshacerCancelacion();
+
+        System.out.println("\nEstado de asientos para la sala 1, funcion 1\n");
+        cine.MostrarEstado(1, 1);
+        System.out.println("\nReservas canceladas");
+        cine.MostrarCancelaciones();
+        System.out.println("\nReservas en espera");
+        cine.MostrarEsperas();
+
     }
 }

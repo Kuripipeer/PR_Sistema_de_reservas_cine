@@ -5,12 +5,13 @@ public class Cancelaciones {
 
     private Stack<String> cancelaciones = new Stack<String>();
 
-    public Cancelaciones() {}
+    public Cancelaciones() {
+    }
 
     public void AgregarCancelacion(int salas, int funciones, int filas, int columnas) {
         String cancelacion = salas + "," + funciones + "," + filas + "," + columnas;
+        System.out.println("Se ha agregado a la lista de cancelaciones...");
         cancelaciones.push(cancelacion);
-
     }
 
     public void MostrarCancelaciones() {
@@ -41,11 +42,8 @@ public class Cancelaciones {
                 return respuesta = "";
 
             } else {
-                System.out.println("No se puede deshacer la cancelación");
-                System.out.println("Se agregara a la lista de espera la cancelación de: " + "Sala: " + datos[0]
-                        + ", Funcion: " + datos[1] + ", Fila: " + datos[2] + ", Columna: " + datos[3]);
-                        cancelaciones.pop();
-                        return respuesta = cancelacion;
+                cancelaciones.pop();
+                return respuesta = cancelacion;
             }
         }
     }

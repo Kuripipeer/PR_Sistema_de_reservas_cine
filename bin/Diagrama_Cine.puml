@@ -2,7 +2,7 @@
 
 class Asiento {
 
-    - Estado : boolean
+    - estado : boolean
     + Asiento ()
     + LiberarAsiento() : boolean
     + ReservarAsiento() : boolean
@@ -10,7 +10,9 @@ class Asiento {
 }
 
 class Sala{
-    - SalaC : Arraylist<Arraylist<Asiento>>
+    - salaC : Arraylist<Arraylist<Asiento>>
+    - cancelaciones : Cancelaciones
+    - espera : Espera
     + Sala(filas : int, columnas : int)
     + LiberarAsiento(fila : int, columna : int) : boolean
     + ReservarAsiento(fila : int, columna : int) : boolean
@@ -18,7 +20,7 @@ class Sala{
 }
 
 class Cine{
-    - CineC : Arraylist<Arraylist<Sala>>
+    - cineC : Arraylist<Arraylist<Sala>>
     + Cine(funciones : int, salas : int, filas : int, columnas : int)
     + LiberarAsiento(sala : int, funcion : int, fila : int, columna : int) : void
     + ReservarAsiento(sala : int, funcion : int, fila : int, columna : int) : void
@@ -34,7 +36,7 @@ class Reserva {
 }
 
 class Cancelaciones{
-    - CancelacionesC = Stack <String>
+    - cancelacionesC = Stack <String>
     + Cancelaciones()
     + AgregarCancelaciones(funciones : int, salas : int, filas : int, columnas : int) : void
     + MostrarCancelaciones() : void
@@ -42,7 +44,7 @@ class Cancelaciones{
 }
 
 class Espera{
-    - EsperaC = Queue <String>
+    - esperaC = Queue <String>
     + Espera()
     + AgregarEspera(funciones : int, salas : int, filas : int, columnas : int) : void
     + MostrarEspera() : void

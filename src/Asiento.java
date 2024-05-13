@@ -1,14 +1,14 @@
 public class Asiento {
 
-    private boolean Estado = false;
+    private boolean estado = false;
 
     public Asiento() {}
 
     public boolean LiberarAsiento() {
-        if (Estado == true) {
-            this.Estado = false;
+        if (estado == true) {
+            this.estado = false;
             return true;
-        } else if (Estado == false) {
+        } else if (estado == false) {
             System.out.println("El asiento ya esta libre.");
             return false;
         }
@@ -16,10 +16,10 @@ public class Asiento {
     }
 
     public boolean ReservarAsiento() {
-        if (Estado == false) {
-            this.Estado = true;
+        if (estado == false) {
+            this.estado = true;
             return true;
-        } else if (Estado == true) {
+        } else if (estado == true) {
             System.out.println("El asiento ya esta reservado.");
             return false;
         }
@@ -27,6 +27,6 @@ public class Asiento {
     }
 
     public String MostrarEstado() {
-        return (Estado == true) ? "[R]" : "[D]";
+        return (estado == true) ? "[R]" : "[D]";
     }
 }
